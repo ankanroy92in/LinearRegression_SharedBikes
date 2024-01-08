@@ -6,8 +6,9 @@ def read_dataset():
     bikes = pd.read_csv('day.csv')
     return bikes
 
-# Droping uncessary columns
-bikes.drop(['instant','casual','registered','dteday'],axis=1,inplace=True)
+def column_drop():
+    # Droping uncessary columns
+    bikes.drop(['instant','casual','registered','dteday'],axis=1,inplace=True)
 
 # Dummy variable creation
 bikes['season'] = bikes['season'].map({1: 'spring', 2:'summer', 3:'fall', 4:'winter'})
